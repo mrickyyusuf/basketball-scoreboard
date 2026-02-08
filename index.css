@@ -1,0 +1,84 @@
+/* Reset & Base Style */
+body {
+  margin: 0;
+  padding: 20px 0 0 0; /* Memberi margin-top 20px di bagian atas */
+  background: #1b244a;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Mengubah posisi dari center ke ATAS */
+  min-height: 100vh;
+}
+
+/* Container Utama */
+.container {
+  display: flex;
+  justify-content: space-around; /* Memberikan ruang rata antar kolom */
+  gap: 20px;
+  width: 100%; /* Menggunakan lebar penuh untuk space-around */
+  max-width: 800px; /* Diperlebar sedikit agar efek space-around terlihat */
+  flex-wrap: wrap;
+}
+
+/* Kolom Home & Guest */
+.container > div {
+  /* flex: 1 dihapus agar kolom tidak dipaksa melebar, sehingga space-evenly bekerja */
+  min-width: 160px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 32px;
+  margin-top: 0; /* Memastikan tidak ada margin bawaan h3 yang mendorong ke bawah */
+  margin-bottom: 10px;
+}
+
+/* Box Skor */
+#hm-score,
+#gst-score {
+  background: #080001;
+  font-family: "Cursed Timer ULiL", sans-serif;
+  color: #f94f6d;
+  font-size: 90px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* Styling Tombol secara Umum */
+button {
+  box-sizing: border-box;
+  width: 45px;
+  height: 45px;
+  font-family: "Cursed Timer ULiL", sans-serif;
+  border: 2px solid #9aabd8;
+  color: #9aabd8;
+  border-radius: 5px;
+  background: none;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 2px;
+  transition: transform 0.1s;
+}
+
+button:active {
+  transform: scale(0.9);
+  background: rgba(154, 171, 216, 0.1);
+}
+
+/* Responsif untuk Layar Sangat Kecil (Mobile) */
+@media (max-width: 400px) {
+  #hm-score,
+  #gst-score {
+    font-size: 60px;
+    height: 100px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+}
